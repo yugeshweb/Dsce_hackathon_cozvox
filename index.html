@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Charges Estimation</title>
+
+    <!-- Import Poppins Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #020202;
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000; /* Keeps header on top */
+        }
+        header .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Section 1 - Welcome Section */
+        .section-welcome {
+            background: #17283a;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .section-welcome h1 {
+            margin-bottom: 10px;
+            font-size: 36px;
+        }
+        .section-welcome p {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        /* Section 2 - Delivery Form Section */
+        .section-form {
+            padding: 50px 20px;
+            background: #ffffff;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            background: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #000000;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result, .error {
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+        }
+        .result {
+            background: #e9f7ef;
+            color: #155724;
+            border: 1px solid #d4edda;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        /* Section 3 - Random Boxes Section */
+        .section-boxes {
+            background: #f1f1f1;
+            padding: 50px 20px;
+        }
+        .boxes-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .box {
+            background: #ffffff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            flex: 1 1 calc(33.333% - 20px);
+            max-width: 300px;
+        }
+        .box h3 {
+            color: #8da6c0;
+            margin-bottom: 10px;
+        }
+        .box p {
+            color: #555;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background: #000000;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">cozvox</div>
+        <nav>
+            <ul>
+                <li><a href="home.html" target="_blank">Home</a></li>
+                <li><a href="about.html" target="_blank">About</a></li>
+                <li><a href="contact.html" target="_blank">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Section 1: Welcome Section -->
+    <section class="section-welcome">
+        <h1>cozvox Delivery Charge Estimator</h1>
+        <p>calculating delivery charges efficiently and accurately.</p>
+    </section>
+
+    <!-- Section 2: Delivery Form -->
+    <section class="section-form">
+        <div class="container">
+            <h2>Get Your Estimate</h2>
+            <form id="deliveryForm">
+                <label for="pincode">Pincode</label>
+                <input type="text" id="pincode" placeholder="Enter Pincode" required>
+                
+                <label for="weight">Weight (kg)</label>
+                <input type="number" id="weight" placeholder="Enter Weight" required>
+
+                <label for="material">Material Type</label>
+                <select id="material" required>
+                    <option value="">Select Material Type</option>
+                    <option value="Fragile">Fragile</option>
+                    <option value="Perishable">Perishable</option>
+                    <option value="Hazardous">Hazardous</option>
+                    <option value="General">General</option>
+                </select>
+                
+                <button type="submit">Get Estimate</button>
+            </form>
+            <div id="result" class="result"></div>
+            <div id="error" class="error"></div>
+        </div>
+    </section>
+
+    <!-- Section 3: Random Boxes -->
+    <section class="section-boxes">
+        <div class="boxes-container">
+            <div class="box">
+                <h3>Affordable Rates</h3>
+                <p>Calculate delivery rates that save you money and improve your business efficiency.</p>
+            </div>
+            <div class="box">
+                <h3>Instant Estimates</h3>
+                <p>Get immediate delivery charge estimates tailored to your requirements.</p>
+            </div>
+            <div class="box">
+                <h3>Material-Specific Costs</h3>
+                <p>Adjust rates based on material types like fragile or hazardous goods.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Cozvox. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('deliveryForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            // Get input values
+            const pincode = document.getElementById('pincode').value;
+            const weight = document.getElementById('weight').value;
+            const material = document.getElementById('material').value;
+
+            // Hide previous messages
+            const resultDiv = document.getElementById('result');
+            const errorDiv = document.getElementById('error');
+            resultDiv.style.display = 'none';
+            errorDiv.style.display = 'none';
+
+            try {
+                // Send data to the backend
+                const response = await fetch('http://localhost:5000/estimate', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ pincode, weight, material })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Error: ${response.statusText}`);
+                }
+
+                const data = await response.json();
+
+                // Display result
+                resultDiv.innerHTML = `
+                    <strong>State:</strong> ${data.state}<br>
+                    <strong>Estimated Charge:</strong> ₹${data.estimatedCharge}<br>
+                    <strong>Material Fee:</strong> ₹${data.materialFee}
+                `;
+                resultDiv.style.display = 'block';
+            } catch (error) {
+                // Display error
+                errorDiv.textContent = error.message;
+                errorDiv.style.display = 'block';
+            }
+        });
+    </script>
+</body>

@@ -1,0 +1,104 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+.banner {
+    background-image: url('https://c8.alamy.com/comp/2RBME8B/banner-help-desk-and-support-concept-vector-illustration-with-support-information-advice-problem-solving-help-service-and-solution-illustration-2RBME8B.jpg');
+    background-size: cover; /* Ensures the image covers the entire banner */
+    background-position: center; /* Centers the image */
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 80px 0;  /* Adjusted padding for text readability */
+    font-size: 1.8em;  /* Slightly larger text for better visibility */
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    /* Blending the background image with a dark overlay */
+    background-color: rgba(0, 0, 0, 0.3);  /* Add a subtle dark overlay for blending */
+    background-blend-mode: darken; /* Darken blend mode to make the image and text blend smoothly */
+}
+
+.contact-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    margin-top: 200px;  /* Adjusted margin-top to accommodate banner height */
+    transition: all 0.3s ease;
+}
+
+.contact-container h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.contact-container p {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1em;
+    color: #555;
+    text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #4CAF50;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #45a049;
+}

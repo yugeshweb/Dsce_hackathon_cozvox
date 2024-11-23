@@ -1,0 +1,77 @@
+/* Header Navigation Styling */
+header {
+    background-color: #292a2b;
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    padding: 10px 15px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #ffdd57;
+}
+
+/* Section Styling */
+section {
+    padding: 80px 20px;
+    margin-top: 50px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#home {
+    background-color: hsl(0, 0%, 93%);
+    text-align: center;
+}
+
+#about, #services, #contact {
+    margin-top: 20px;
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Add some spacing for fixed header */
+body {
+    padding-top: 60px;
+}

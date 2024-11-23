@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Cozvox</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6; /* Light grayish background */
+            color: #4a4a4a; /* Muted gray text */
+        }
+        header {
+            background: #7d9d9c; /* Soft muted teal */
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 2rem;
+        }
+        .content {
+            padding: 20px 30px;
+            position: relative;
+            z-index: 2; /* Ensures text is above the background */
+        }
+        .section {
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .section:hover {
+            transform: scale(1.03);
+        }
+        .section h2 {
+            margin-top: 0;
+            font-weight: 600;
+            color: #333;
+        }
+        .story {
+            background-color: rgba(163, 184, 180, 0.8); /* Soft greenish-gray with opacity */
+        }
+        .vision {
+            background-color: rgba(209, 224, 220, 0.8); /* Soft powder blue with opacity */
+        }
+        .mission {
+            background-color: rgba(176, 208, 198, 0.8); /* Light minty green with opacity */
+        }
+        .team {
+            background-color: rgba(215, 228, 226, 0.8); /* Soft pastel green with opacity */
+        }
+        footer {
+            background: #a2b9b1; /* Light muted green */
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+        }
+
+        /* Background Image Fade-in */
+        .about-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('your-image-url.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            z-index: 1; /* Ensure it's below text content */
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .about-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About Us</h1>
+    </header>
+    
+    <!-- Background image container -->
+    <div class="about-background"></div>
+
+    <div class="content">
+        <div class="section story">
+            <h2>Our Story</h2>
+            <p>Cozvox was founded in 2024 with a mission to transform the way packages are delivered. We saw a need for a service that not only ensures the safety of parcels but also remains budget-friendly for customers. Over the years, our commitment to affordability and reliability has made us a trusted name in the delivery industry.</p>
+            <img src="your-image-url.jpg" alt="Cozvox Team" class="about-image"> <!-- Optional image -->
+        </div>
+
+        <div class="section vision">
+            <h2>Vision</h2>
+            <p>Our vision is to be the most trusted package delivery service globally, where affordability meets reliability. We aim to redefine delivery standards, ensuring that every package, regardless of size or distance, reaches its destination safely and on time.</p>
+        </div>
+
+        <div class="section mission">
+            <h2>Mission</h2>
+            <p>At Cozvox, our mission is simple: to provide safe, efficient, and cost-effective package delivery services tailored to the distance traveled. We strive to make delivery accessible to everyone while maintaining the highest standards of service quality.</p>
+        </div>
+
+        <div class="section team">
+            <h2>Our Team</h2>
+            <p>Behind Cozvox is a dedicated team of logistics experts, customer service professionals, and delivery personnel who share a common goal: ensuring your packages arrive securely and affordably. Our team works tirelessly to optimize routes, enhance safety protocols, and deliver the best experience for our customers.</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Cozvox. All rights reserved.</p>
+    </footer>
+</body>
+</html>
